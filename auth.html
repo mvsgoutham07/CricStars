@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account | CricStars Official</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .auth-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .auth-panel {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+        .auth-panel h2 {
+            margin-bottom: 25px;
+            color: #0b6623;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        .grid-2 { 
+            display: grid; 
+            grid-template-columns: 1fr 1fr; 
+            gap: 15px; 
+        }
+        .radio-group {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            margin-top: 10px;
+        }
+        .radio-group label {
+            font-weight: normal;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            cursor: pointer;
+        }
+        .radio-group input {
+            width: auto;
+            accent-color: #0b6623;
+        }
+        @media (max-width: 900px) {
+            .auth-container {
+                grid-template-columns: 1fr;
+            }
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <noscript> Apologies! Your does not support scripts. Kindly, enable JavaScript to proceed </noscript>
+    <header>
+        <h1 class="branding" style="font-family: Georgia, 'Times New Roman', Times, serif;">CRICSTARS</h1>
+        <p class="sub-branding"><i>Premium Cricket Equipment</i></p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="auth.html" class="active">Log In/ Sign Up</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+    </nav>
+    <div class="container animate-pop">
+        <div class="auth-container">
+            <div class="auth-panel">
+                <h2>Login</h2>
+                <form id="loginForm">
+                    <div class="form-group">
+                        <label>Email or Mobile <span class="req">*</span></label>
+                        <input type="text" id="loginId" placeholder="Registered email or phone number">
+                        <span class="error-msg" id="loginIdError">Enter registered email or mobile to login.</span>
+                    </div>
+                    <div class="form-group">
+                        <label>Password <span class="req">*</span></label>
+                        <input type="password" id="loginPass" placeholder="Enter your password">
+                        <span class="error-msg" id="loginPassError">Password is required.</span>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%; margin-top: 10px;">Log In</button>
+                    <div style="text-align: center; margin-top: 20px;">
+                        <a href="#" style="color: #666; font-size: 0.9rem; text-decoration: none;" onclick="alert('Password reset link sent to your email/phone!')">Forgot Password?</a>
+                    </div>
+                </form>
+            </div>
+            <div class="auth-panel">
+                <h2>Create Account</h2>
+                <form id="registerForm">
+                    <div class="form-group">
+                        <label>Full Name <span class="req">*</span></label>
+                        <input type="text" id="regName" placeholder="e.g. Virat Kohli">
+                        <span class="error-msg" id="regNameError">Name cannot contain special characters.</span>
+                    </div>
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label>Date of Birth <span class="req">*</span></label>
+                            <input type="date" id="regDob">
+                            <span class="error-msg" id="regDobError">DOB is required.</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Gender</label>
+                            <div class="radio-group">
+                                <label><input type="radio" name="gender" value="Male" checked> Male</label>
+                                <label><input type="radio" name="gender" value="Female"> Female</label>
+                                <label><input type="radio" name="gender" value="Other"> Other</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label>Mobile Number <span class="req">*</span></label>
+                            <input type="text" id="regMobile" placeholder="10-digit number">
+                            <span class="error-msg" id="regMobileError">Strictly 10 digits required.</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Email ID <span class="req">*</span></label>
+                            <input type="email" id="regEmail" placeholder="example@email.com">
+                            <span class="error-msg" id="regEmailError">Enter a valid email address.</span>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Address <span class="req">*</span></label>
+                        <input type="text" id="regAddress" placeholder="House No., Street, Area, City">
+                        <span class="error-msg" id="regAddressError">Address is required.</span>
+                    </div>
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label>Pin Code <span class="req">*</span></label>
+                            <input type="text" id="regPin" placeholder="e.g. 400001">
+                            <span class="error-msg" id="regPinError">Valid Pin Code required.</span>
+                        </div>
+                        <div class="form-group">
+                            <label>State / UT <span class="req">*</span></label>
+                            <select id="regState">
+                                <option value="">Select State/UT</option>
+                                <option value="Andhra Pradesh">Andhra Pradesh</option>
+                                <option value="Arunachal Pradesh">Arunachal Pradesh</option>
+                                <option value="Assam">Assam</option>
+                                <option value="Bihar">Bihar</option>
+                                <option value="Chhattisgarh">Chhattisgarh</option>
+                                <option value="Goa">Goa</option>
+                                <option value="Gujarat">Gujarat</option>
+                                <option value="Haryana">Haryana</option>
+                                <option value="Himachal Pradesh">Himachal Pradesh</option>
+                                <option value="Jharkhand">Jharkhand</option>
+                                <option value="Karnataka">Karnataka</option>
+                                <option value="Kerala">Kerala</option>
+                                <option value="Madhya Pradesh">Madhya Pradesh</option>
+                                <option value="Maharashtra">Maharashtra</option>
+                                <option value="Manipur">Manipur</option>
+                                <option value="Meghalaya">Meghalaya</option>
+                                <option value="Mizoram">Mizoram</option>
+                                <option value="Nagaland">Nagaland</option>
+                                <option value="Odisha">Odisha</option>
+                                <option value="Punjab">Punjab</option>
+                                <option value="Rajasthan">Rajasthan</option>
+                                <option value="Sikkim">Sikkim</option>
+                                <option value="Tamil Nadu">Tamil Nadu</option>
+                                <option value="Telangana">Telangana</option>
+                                <option value="Tripura">Tripura</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Uttarakhand">Uttarakhand</option>
+                                <option value="West Bengal">West Bengal</option>
+                                <option value="Andaman and Nicobar Islands">Andaman and Nicobar Islands</option>
+                                <option value="Chandigarh">Chandigarh</option>
+                                <option value="Dadra and Nagar Haveli and Daman and Diu">Dadra and Nagar Haveli and Daman and Diu</option>
+                                <option value="Delhi">Delhi</option>
+                                <option value="Jammu and Kashmir">Jammu and Kashmir</option>
+                                <option value="Ladakh">Ladakh</option>
+                                <option value="Lakshadweep">Lakshadweep</option>
+                                <option value="Puducherry">Puducherry</option>
+                            </select>
+                            <span class="error-msg" id="regStateError">Please select a State/UT.</span>
+                        </div>
+                    </div>
+                    <div class="grid-2">
+                        <div class="form-group">
+                            <label>Create Password <span class="req">*</span></label>
+                            <input type="password" id="regPass" placeholder="Min 8 chars, 1 upper, 1 num, 1 special">
+                            <span class="error-msg" id="regPassError">At least 8 chars, 1 uppercase, 1 number, 1 special char.</span>
+                        </div>
+                        <div class="form-group">
+                            <label>Confirm Password <span class="req">*</span></label>
+                            <input type="password" id="regConfirm" placeholder="Re-enter password">
+                            <span class="error-msg" id="regConfirmError">Passwords do not match.</span>
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-secondary" style="width: 100%; margin-top: 10px;">Create Account</button>
+                    <p id="regGlobalError" class="error-msg" style="text-align:center; font-weight:bold; margin-top:15px;"></p>
+                </form>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;" class="text-gradient">CRICSTARS SPORTS INDIA</p>
+            <p>&copy; 2026 CricStars. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="js/validation.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

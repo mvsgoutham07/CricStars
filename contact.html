@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact | CricStars Official</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <noscript> Apologies! Your does not support scripts. Kindly, enable JavaScript to proceed </noscript>
+    <header>
+        <h1 class="branding" style="font-family: Georgia, 'Times New Roman', Times, serif;">CRICSTARS</h1>
+        <p class="sub-branding"><i>Premium Cricket Equipment</i></p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="auth.html">Log In/ Sign Up</a>
+        <a href="contact.html" class="active">Contact</a>
+        <a href="about.html">About</a>
+    </nav>
+    <div
+        style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: url('assets/stadium.jpg') center/cover no-repeat; z-index: -2;">
+    </div>
+    <div class="container animate-pop">
+        <h2 style="text-align: center; margin-bottom: 40px; color: rgb(0, 255, 106);" class="text-gradient">Get In Touch
+        </h2>
+        <div class="grid-2">
+            <div
+                style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                <h3 style="margin-bottom: 20px; color: #0b6623;">Send us a message</h3>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label>Your Name <span class="req">*</span></label>
+                        <input type="text" id="name" placeholder="Rohit Sharma" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Email Address <span class="req">*</span></label>
+                        <input type="email" id="email" placeholder="example@email.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Message <span class="req">*</span></label>
+                        <textarea id="message" rows="5" placeholder="How can we help you ?" required></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">Send Message</button>
+                </form>
+            </div>
+            <div
+                style="background: #111; color: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05); display: flex; flex-direction: column; justify-content: center;">
+                <h3 style="margin-bottom: 20px; color: #22c55e;">Contact Information</h3>
+                <p style="margin-bottom: 15px; font-size: 1.1rem;"><strong>Address:</strong><br> 123 Cricket Avenue,
+                    <br>Sports Stadium Road, Mumbai, 400001
+                </p>
+                <p style="margin-bottom: 15px; font-size: 1.1rem;"><strong>Phone:</strong><br> +91 98765 43210</p>
+                <p style="margin-bottom: 15px; font-size: 1.1rem;"><strong>Email:</strong><br> support@cricstars.in</p>
+                <p style="margin-bottom: 15px; font-size: 1.1rem;"><strong>Working Hours:</strong><br> Monday -
+                    Saturday, 9:00 AM to 6:00 PM</p>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;" class="text-gradient">CRICSTARS SPORTS
+                INDIA</p>
+            <p>&copy; 2026 CricStars. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+</html>

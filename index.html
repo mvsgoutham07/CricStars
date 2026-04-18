@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CricStars | Official Online Store</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <noscript> Apologies! Your does not support scripts. Kindly, enable JavaScript to proceed </noscript>
+    <header>
+        <h1 class="branding" style="font-family: Georgia, 'Times New Roman', Times, serif;">CricStars</h1>
+        <p class="sub-branding"><i>Premium Cricket Equipment</i></p>
+    </header>
+    <nav>
+        <a href="index.html" class="active">Home</a>
+        <a href="products.html">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="auth.html">Log In/ Sign Up</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+    </nav>
+    <div class="hero-video-container">
+        <video id="heroVideo" class="hero-video" autoplay muted loop playsinline>
+            <source src="assets/wc 19.mp4" type="video/mp4">
+            Your browser does not support HTML5 video.
+        </video>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
+                var vid = document.getElementById('heroVideo');
+                if (vid) {
+                    vid.playbackRate = 2.0;
+                }
+            });
+        </script>
+        <div class="video-overlay"></div>
+        <div class="hero-content">
+            <h2>Welcome to CricStars</h2>
+            <p>Discover the finest selection of professional cricket gear. From handcrafted English Willow bats to
+                elite-level protection, we bring you the equipment trusted by the best in the game.</p>
+            <a href="products.html" class="btn">Shop Now</a>
+        </div>
+    </div>
+    <div class="container" style="padding-top: 60px;">
+        <h2 style="text-align: center; margin-bottom: 40px;" class="reveal">Featured Equipment</h2>
+        <div class="product-grid">
+            <div class="product-card reveal">
+                <img src="assets/sston.jpg" alt="Bat">
+                <div class="product-info">
+                    <h3>SS Ton Player Edition</h3>
+                    <p>English Willow Cricket Bat</p>
+                    <div class="product-price">₹55,000</div>
+                    <div class="card-actions">
+                        <button class="btn" style="flex: 1;" onclick="addToCart(1)">Add to Cart</button>
+                        <button class="btn btn-secondary" style="flex: 1;"
+                            onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card reveal">
+                <img src="assets/dukestop.jpg" alt="Ball">
+                <div class="product-info">
+                    <h3>Dukes Special County</h3>
+                    <p>4pc Red Leather Match Ball</p>
+                    <div class="product-price">₹2,800</div>
+                    <div class="card-actions">
+                        <button class="btn" style="flex: 1;" onclick="addToCart(7)">Add to Cart</button>
+                        <button class="btn btn-secondary" style="flex: 1;"
+                            onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card reveal">
+                <img src="assets/shreymasterclass.jpg" alt="Helmet">
+                <div class="product-info">
+                    <h3>Shrey Masterclass Pro</h3>
+                    <p>Titanium Grille Protection</p>
+                    <div class="product-price">₹12,500</div>
+                    <div class="card-actions">
+                        <button class="btn" style="flex: 1;" onclick="addToCart(17)">Add to Cart</button>
+                        <button class="btn btn-secondary" style="flex: 1;"
+                            onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 50px;" class="reveal">
+            <a href="products.html" class="btn btn-secondary" style="padding: 15px 40px; font-size: 1.1rem;">View Full
+                Collection</a>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;" class="text-gradient">CRICSTARS SPORTS
+                INDIA</p>
+            <p>&copy; 2026 CricStars. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

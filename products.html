@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Products | CricStars Official</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .shop-layout {
+            display: grid;
+            grid-template-columns: 250px 1fr;
+            gap: 40px;
+        }
+        .sidebar {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid #eee;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            height: fit-content;
+        }
+        .filter-group {
+            margin-bottom: 25px;
+        }
+        .filter-group h4 {
+            margin-bottom: 15px;
+            border-bottom: 2px solid #0b6623;
+            display: inline-block;
+            padding-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        .filter-option {
+            margin-bottom: 12px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 0.95rem;
+        }
+        .filter-option:hover {
+            color: #0b6623;
+        }
+        .filter-option input {
+            width: 18px;
+            height: 18px;
+            cursor: pointer;
+            accent-color: #0b6623;
+        }
+        .filter-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            background-color: #fafafa;
+        }
+        @media (max-width: 900px) {
+            .shop-layout {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <noscript> Apologies! Your does not support scripts. Kindly, enable JavaScript to proceed </noscript>
+    <header>
+        <h1 class="branding" style="font-family: Georgia, 'Times New Roman', Times, serif;">CricStars</h1>
+        <p class="sub-branding"><i>Premium Cricket Equipment</i></p>
+    </header>
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="products.html" class="active">Products</a>
+        <a href="cart.html">Cart</a>
+        <a href="auth.html">Log In/ Sign Up</a>
+        <a href="contact.html">Contact</a>
+        <a href="about.html">About</a>
+    </nav>
+    <div class="container animate-pop">
+        <h2 style="margin-bottom: 30px;" class="text-gradient">Our Collection</h2>
+        <div class="shop-layout">
+            <aside class="sidebar">
+                <div class="filter-group">
+                    <h4>Categories</h4>
+                    <label class="filter-option"><input type="checkbox" value="Bats" checked> <span>Bats</span></label>
+                    <label class="filter-option"><input type="checkbox" value="Balls" checked>
+                        <span>Balls</span></label>
+                    <label class="filter-option"><input type="checkbox" value="Pads" checked> <span>Pads</span></label>
+                    <label class="filter-option"><input type="checkbox" value="Gloves" checked>
+                        <span>Gloves</span></label>
+                    <label class="filter-option"><input type="checkbox" value="Helmets" checked>
+                        <span>Helmets</span></label>
+                    <label class="filter-option"><input type="checkbox" value="Protection" checked>
+                        <span>Protection</span></label>
+                </div>
+                <div class="filter-group">
+                    <h4>Max Price: <span id="priceValue">₹60,000</span></h4>
+                    <input type="range" id="priceRange" min="0" max="60000" step="500" value="60000" style="width: 100%; accent-color: #0b6623; cursor: pointer;">
+                </div>
+            </aside>
+            <main>
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; gap: 20px; flex-wrap: wrap;">
+                    <input type="text" id="searchInput" placeholder="Search equipment by name or type..."
+                        style="flex: 1; padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size:1rem; outline:none;">
+                    <select id="sortSelect"
+                        style="width: 220px; padding: 12px; border-radius: 8px; border: 1px solid #ccc; font-size:1rem; cursor:pointer;">
+                        <option value="newest">New Arrivals</option>
+                        <option value="low">Price: Low to High</option>
+                        <option value="high">Price: High to Low</option>
+                    </select>
+                </div>
+                <div class="product-grid" id="productGrid">
+                    <div class="product-card animate-pop" data-category="Bats" data-price="55000">
+                        <img src="assets/sston.jpg" alt="SS Ton Player Edition">
+                        <div class="product-info">
+                            <h3 class="product-name">SS Ton Player Edition</h3>
+                            <p class="product-type" style="margin-bottom: 5px;"><strong>Type:</strong> English Willow
+                            </p>
+                            <p class="product-desc">Grade A+ English Willow, massive edges.</p>
+                            <div class="product-price">₹55,000</div>
+                            <div class="card-actions">
+                                <button class="btn" style="flex: 1; padding: 10px;" onclick="addToCart(1)">Add to
+                                    Cart</button>
+                                <button class="btn btn-secondary" style="flex: 1; padding: 10px;"
+                                    onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card animate-pop" data-category="Bats" data-price="4500">
+                        <img src="assets/sgsavage.jpg" alt="SG Savage X1">
+                        <div class="product-info">
+                            <h3 class="product-name">SG Savage X1</h3>
+                            <p class="product-type" style="margin-bottom: 5px;"><strong>Type:</strong> Kashmir Willow
+                            </p>
+                            <p class="product-desc">Premium Kashmir Willow, ready to play.</p>
+                            <div class="product-price">₹4,500</div>
+                            <div class="card-actions">
+                                <button class="btn" style="flex: 1; padding: 10px;" onclick="addToCart(2)">Add to
+                                    Cart</button>
+                                <button class="btn btn-secondary" style="flex: 1; padding: 10px;"
+                                    onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card animate-pop" data-category="Bats" data-price="38000">
+                        <img src="assets/gmdiamond.jpg" alt="GM Diamond Pro">
+                        <div class="product-info">
+                            <h3 class="product-name">GM Diamond Pro</h3>
+                            <p class="product-type" style="margin-bottom: 5px;"><strong>Type:</strong> English Willow
+                            </p>
+                            <p class="product-desc">Traditional profile, modern sweet spot.</p>
+                            <div class="product-price">₹38,000</div>
+                            <div class="card-actions">
+                                <button class="btn" style="flex: 1; padding: 10px;" onclick="addToCart(3)">Add to
+                                    Cart</button>
+                                <button class="btn btn-secondary" style="flex: 1; padding: 10px;"
+                                    onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card animate-pop" data-category="Balls" data-price="2800">
+                        <img src="assets/dukestop.jpg" alt="Dukes Special County">
+                        <div class="product-info">
+                            <h3 class="product-name">Dukes Special County</h3>
+                            <p class="product-type" style="margin-bottom: 5px;"><strong>Type:</strong> 4pc Red Leather
+                            </p>
+                            <p class="product-desc">Premium match ball used in first-class cricket.</p>
+                            <div class="product-price">₹2,800</div>
+                            <div class="card-actions">
+                                <button class="btn" style="flex: 1; padding: 10px;" onclick="addToCart(7)">Add to
+                                    Cart</button>
+                                <button class="btn btn-secondary" style="flex: 1; padding: 10px;"
+                                    onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card animate-pop" data-category="Balls" data-price="2400">
+                        <img src="assets/sgball.jpg" alt="SG Test White">
+                        <div class="product-info">
+                            <h3 class="product-name">SG Test White</h3>
+                            <p class="product-type" style="margin-bottom: 5px;"><strong>Type:</strong> 4pc White Leather
+                            </p>
+                            <p class="product-desc">Official ball for T20 and ODIs.</p>
+                            <div class="product-price">₹2,400</div>
+                            <div class="card-actions">
+                                <button class="btn" style="flex: 1; padding: 10px;" onclick="addToCart(8)">Add to
+                                    Cart</button>
+                                <button class="btn btn-secondary" style="flex: 1; padding: 10px;"
+                                    onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card animate-pop" data-category="Balls" data-price="3500">
+                        <img src="assets/kookaburrapinkball.jpg" alt="Kookaburra Turf Pink">
+                        <div class="product-info">
+                            <h3 class="product-name">Kookaburra Turf Pink</h3>
+                            <p class="product-type" style="margin-bottom: 5px;"><strong>Type:</strong> 4pc Pink Leather
+                            </p>
+                            <p class="product-desc">Designed for day-night Test matches.</p>
+                            <div class="product-price">₹3,500</div>
+                            <div class="card-actions">
+                                <button class="btn" style="flex: 1; padding: 10px;" onclick="addToCart(9)">Add to
+                                    Cart</button>
+                                <button class="btn btn-secondary" style="flex: 1; padding: 10px;"
+                                    onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card animate-pop" data-category="Pads" data-price="9500">
+                        <img src="assets/battingpads.jpg" alt="Adidas 24-7 Batting Pads">
+                        <div class="product-info">
+                            <h3 class="product-name">Adidas 24-7 Batting Pads</h3>
+                            <p class="product-type" style="margin-bottom: 5px;"><strong>Type:</strong> Batting Pads</p>
+                            <p class="product-desc">Ultra-light foam with maximum protection.</p>
+                            <div class="product-price">₹9,500</div>
+                            <div class="card-actions">
+                                <button class="btn" style="flex: 1; padding: 10px;" onclick="addToCart(11)">Add to
+                                    Cart</button>
+                                <button class="btn btn-secondary" style="flex: 1; padding: 10px;"
+                                    onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card animate-pop" data-category="Pads" data-price="6200">
+                        <img src="assets/sghilite.jpg" alt="SG Hilite Keeping Pads">
+                        <div class="product-info">
+                            <h3 class="product-name">SG Hilite Keeping Pads</h3>
+                            <p class="product-type" style="margin-bottom: 5px;"><strong>Type:</strong> Keeping Pads</p>
+                            <p class="product-desc">Compact design for quick movements.</p>
+                            <div class="product-price">₹6,200</div>
+                            <div class="card-actions">
+                                <button class="btn" style="flex: 1; padding: 10px;" onclick="addToCart(12)">Add to
+                                    Cart</button>
+                                <button class="btn btn-secondary" style="flex: 1; padding: 10px;"
+                                    onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card animate-pop" data-category="Gloves" data-price="5500">
+                        <img src="assets/gmgloves.jpg" alt="GM Diamond Batting Gloves">
+                        <div class="product-info">
+                            <h3 class="product-name">GM Diamond Batting Gloves</h3>
+                            <p class="product-type" style="margin-bottom: 5px;"><strong>Type:</strong> Batting Gloves
+                            </p>
+                            <p class="product-desc">Multi-flex points for finger control.</p>
+                            <div class="product-price">₹5,500</div>
+                            <div class="card-actions">
+                                <button class="btn" style="flex: 1; padding: 10px;" onclick="addToCart(14)">Add to
+                                    Cart</button>
+                                <button class="btn btn-secondary" style="flex: 1; padding: 10px;"
+                                    onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card animate-pop" data-category="Helmets" data-price="12500">
+                        <img src="assets/shreymasterclass.jpg" alt="Shrey Masterclass Pro">
+                        <div class="product-info">
+                            <h3 class="product-name">Shrey Masterclass Pro</h3>
+                            <p class="product-type" style="margin-bottom: 5px;"><strong>Type:</strong> Titanium Grille
+                            </p>
+                            <p class="product-desc">Lighest and strongest protection available.</p>
+                            <div class="product-price">₹12,500</div>
+                            <div class="card-actions">
+                                <button class="btn" style="flex: 1; padding: 10px;" onclick="addToCart(17)">Add to
+                                    Cart</button>
+                                <button class="btn btn-secondary" style="flex: 1; padding: 10px;"
+                                    onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card animate-pop" data-category="Protection" data-price="2200">
+                        <img src="assets/chestguard.jpg" alt="Aero P1 Chest Guard">
+                        <div class="product-info">
+                            <h3 class="product-name">Aero P1 Chest Guard</h3>
+                            <p class="product-type" style="margin-bottom: 5px;"><strong>Type:</strong> Chest Guard</p>
+                            <p class="product-desc">Contoured 3-piece design for torso.</p>
+                            <div class="product-price">₹2,200</div>
+                            <div class="card-actions">
+                                <button class="btn" style="flex: 1; padding: 10px;" onclick="addToCart(19)">Add to
+                                    Cart</button>
+                                <button class="btn btn-secondary" style="flex: 1; padding: 10px;"
+                                    onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card animate-pop" data-category="Protection" data-price="950">
+                        <img src="assets/armguard.jpg" alt="SG Pro Arm Guard">
+                        <div class="product-info">
+                            <h3 class="product-name">SG Pro Arm Guard</h3>
+                            <p class="product-type" style="margin-bottom: 5px;"><strong>Type:</strong> Arm Guard</p>
+                            <p class="product-desc">High-density foam with moisture-wicking fabric.</p>
+                            <div class="product-price">₹950</div>
+                            <div class="card-actions">
+                                <button class="btn" style="flex: 1; padding: 10px;" onclick="addToCart(20)">Add to
+                                    Cart</button>
+                                <button class="btn btn-secondary" style="flex: 1; padding: 10px;"
+                                    onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card animate-pop" data-category="Bats" data-price="3500">
+                        <img src="assets/dsc.jpg" alt="DSC Condor Force">
+                        <div class="product-info">
+                            <h3 class="product-name">DSC Condor Force</h3>
+                            <p class="product-type" style="margin-bottom: 5px;"><strong>Type:</strong> Kashmir Willow
+                            </p>
+                            <p class="product-desc">Powerful stroke maker with deep bow.</p>
+                            <div class="product-price">₹3,500</div>
+                            <div class="card-actions">
+                                <button class="btn" style="flex: 1; padding: 10px;" onclick="addToCart(4)">Add to
+                                    Cart</button>
+                                <button class="btn btn-secondary" style="flex: 1; padding: 10px;"
+                                    onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card animate-pop" data-category="Bats" data-price="42000">
+                        <img src="assets/kookaburra.jpg" alt="Kookaburra Ghost">
+                        <div class="product-info">
+                            <h3 class="product-name">Kookaburra Ghost</h3>
+                            <p class="product-type" style="margin-bottom: 5px;"><strong>Type:</strong> English Willow
+                            </p>
+                            <p class="product-desc">Minimalist design, maximum performance.</p>
+                            <div class="product-price">₹42,000</div>
+                            <div class="card-actions">
+                                <button class="btn" style="flex: 1; padding: 10px;" onclick="addToCart(5)">Add to
+                                    Cart</button>
+                                <button class="btn btn-secondary" style="flex: 1; padding: 10px;"
+                                    onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card animate-pop" data-category="Balls" data-price="850">
+                        <img src="assets/clubball.jpg" alt="Club Grade Red">
+                        <div class="product-info">
+                            <h3 class="product-name">Club Grade Red</h3>
+                            <p class="product-type" style="margin-bottom: 5px;"><strong>Type:</strong> 2pc Red Leather
+                            </p>
+                            <p class="product-desc">Highly durable 2-piece ball for academy practice.</p>
+                            <div class="product-price">₹850</div>
+                            <div class="card-actions">
+                                <button class="btn" style="flex: 1; padding: 10px;" onclick="addToCart(10)">Add to
+                                    Cart</button>
+                                <button class="btn btn-secondary" style="flex: 1; padding: 10px;"
+                                    onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card animate-pop" data-category="Pads" data-price="8800">
+                        <img src="assets/ssgladiator.jpg" alt="SS Gladiator Batting Pads">
+                        <div class="product-info">
+                            <h3 class="product-name">SS Gladiator Batting Pads</h3>
+                            <p class="product-type" style="margin-bottom: 5px;"><strong>Type:</strong> Batting Pads</p>
+                            <p class="product-desc">Traditional cane padding with modern comfort.</p>
+                            <div class="product-price">₹8,800</div>
+                            <div class="card-actions">
+                                <button class="btn" style="flex: 1; padding: 10px;" onclick="addToCart(13)">Add to
+                                    Cart</button>
+                                <button class="btn btn-secondary" style="flex: 1; padding: 10px;"
+                                    onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card animate-pop" data-category="Gloves" data-price="4800">
+                        <img src="assets/keepinggloves.jpg" alt="SG Test Keeping Gloves">
+                        <div class="product-info">
+                            <h3 class="product-name">SG Test Keeping Gloves</h3>
+                            <p class="product-type" style="margin-bottom: 5px;"><strong>Type:</strong> Keeping Gloves
+                            </p>
+                            <p class="product-desc">Super-grip palms and reinforced protection.</p>
+                            <div class="product-price">₹4,800</div>
+                            <div class="card-actions">
+                                <button class="btn" style="flex: 1; padding: 10px;" onclick="addToCart(15)">Add to
+                                    Cart</button>
+                                <button class="btn btn-secondary" style="flex: 1; padding: 10px;"
+                                    onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card animate-pop" data-category="Gloves" data-price="4200">
+                        <img src="assets/ssskytop.jpg" alt="SS Platinum Batting Gloves">
+                        <div class="product-info">
+                            <h3 class="product-name">SS Platinum Batting Gloves</h3>
+                            <p class="product-type" style="margin-bottom: 5px;"><strong>Type:</strong> Batting Gloves
+                            </p>
+                            <p class="product-desc">Calf leather palms with sheep leather reinforcement.</p>
+                            <div class="product-price">₹4,200</div>
+                            <div class="card-actions">
+                                <button class="btn" style="flex: 1; padding: 10px;" onclick="addToCart(16)">Add to
+                                    Cart</button>
+                                <button class="btn btn-secondary" style="flex: 1; padding: 10px;"
+                                    onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card animate-pop" data-category="Helmets" data-price="10800">
+                        <img src="assets/masuri.jpg" alt="Masuri Vision Series">
+                        <div class="product-info">
+                            <h3 class="product-name">Masuri Vision Series</h3>
+                            <p class="product-type" style="margin-bottom: 5px;"><strong>Type:</strong> Steel Grille</p>
+                            <p class="product-desc">Patented eye-line grille technology for better vision.</p>
+                            <div class="product-price">₹10,800</div>
+                            <div class="card-actions">
+                                <button class="btn" style="flex: 1; padding: 10px;" onclick="addToCart(18)">Add to
+                                    Cart</button>
+                                <button class="btn btn-secondary" style="flex: 1; padding: 10px;"
+                                    onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-card animate-pop" data-category="Protection" data-price="450">
+                        <img src="assets/abdoguard.jpg" alt="GM All-Rounder Abdo Guard">
+                        <div class="product-info">
+                            <h3 class="product-name">GM All-Rounder Abdo Guard</h3>
+                            <p class="product-type" style="margin-bottom: 5px;"><strong>Type:</strong> Abdomen Guard</p>
+                            <p class="product-desc">Essential high-impact groin protection.</p>
+                            <div class="product-price">₹450</div>
+                            <div class="card-actions">
+                                <button class="btn" style="flex: 1; padding: 10px;" onclick="addToCart(21)">Add to
+                                    Cart</button>
+                                <button class="btn btn-secondary" style="flex: 1; padding: 10px;"
+                                    onclick="alert('Proceeding to checkout...')">Buy Now</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+    <footer>
+        <div class="container">
+            <p style="font-size: 1.2rem; font-weight: bold; margin-bottom: 10px;" class="text-gradient">CRICSTARS SPORTS
+                INDIA</p>
+            <p>&copy; 2026 CricStars. All Rights Reserved.</p>
+        </div>
+    </footer>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>
